@@ -2,24 +2,34 @@ package Model;
 
 import Constants.Color;
 public abstract class Piece {
-    private Color color;
+
+    private String color;
+
     private int row;
+
     private int col;
 
-    public Piece() {
-        this.color = color;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public Piece(Color color) {
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     // Método abstracto que debe ser implementado por las subclases
     public abstract boolean isValidMove(int targetRow, int targetCol);
 
     // Otros métodos comunes a todas las piezas
-    public Color getColor() {
-        return color;
-    }
+
 
     public int getRow() {
         return row;

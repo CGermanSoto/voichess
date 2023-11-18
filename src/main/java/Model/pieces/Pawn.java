@@ -1,9 +1,10 @@
 package Model.pieces;
 
+import Constants.Color;
 import Model.Piece;
 
 public class Pawn extends Piece {
-    public Pawn(String white) {
+    public Pawn() {
         super();
     }
 

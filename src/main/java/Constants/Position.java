@@ -18,5 +18,6 @@ public class Position {
     public static final int COL_5 = 4;
     public static final int COL_6 = 5;
     public static final int COL_7 = 6;
-    public static final int COL_8 = 7;
+    public static final int
+            COL_8 = 7;
 }

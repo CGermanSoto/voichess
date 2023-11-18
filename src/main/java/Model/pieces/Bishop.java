@@ -1,9 +1,10 @@
 package Model.pieces;
 
+import Constants.Color;
 import Model.Piece;
 
 public class Bishop extends Piece {
-    public Bishop(String white) {
+    public Bishop() {
         super();
     }
 

@@ -1,7 +1,9 @@
 package Model;
 
-import Constants.Position;
+import Constants.Color;
 import Model.pieces.*;
+
+import java.util.Arrays;
 
 import static Constants.BoardConstants.BOARD_SIZE;
 import static Constants.Color.BLACK;
@@ -11,16 +13,21 @@ import static Constants.Position.*;
 public class Board {
     private Piece[][] board;
 
-    public Board(){
+    public Board() {
         this.board = new Piece[BOARD_SIZE][BOARD_SIZE];
         initializeBoard();
     }
 
     public boolean movePiece(int startX, int startY, int endX, int endY) {
         // Mueve la pieza de la posición inicial a la posición final si el movimiento es válido.
-        if(!isValidMove(startX, startY, endX, endY)){
-            return false;
-        }
+        Piece tipePiece = this.board[startX][startY];
+        this.board[endX][endY] = tipePiece;
+        this.board[startX][startY] = null;
+
+
+//        if (!isValidMove(startX, startY, endX, endY)) {
+//            return false;
+//        }
         // Devuelve true si el movimiento fue exitoso, false si fue inválido.
         return true;
     }
@@ -30,42 +37,51 @@ public class Board {
         return true;
     }
 
-    public void printBoard(){
-        // Imprime el estado del tablero
+    public void printBoard() {
+        for (int row = 0; row < BOARD_SIZE; row++) {
+            for (int col = 0; col < BOARD_SIZE; col++) {
+                if (board[row][col] != null) {
+                    System.out.print(" Row: " + row + " " + "Col: " + col + ": " + board[row][col].toString() );
+                } else {
+                    System.out.print(" Row: " + row + " " + "Col: " + col + ": " +"Empty ");
+                }
+            }
+            System.out.println();
+        }
     }
+
 
     private void initializeBoard() {
-        placePiece(new Rook(WHITE), ROW_A, COL_1);
-        placePiece(new Knight(WHITE), ROW_A, COL_2);
-        placePiece(new Bishop(WHITE), ROW_A, COL_3);
-        placePiece(new Queen(WHITE), ROW_A, COL_4);
-        placePiece(new King(WHITE), ROW_A, COL_5);
-        placePiece(new Bishop(WHITE), ROW_A, COL_6);
-        placePiece(new Knight(WHITE), ROW_A, COL_7);
-        placePiece(new Rook(WHITE), ROW_A, COL_8);
+        placePiece(new Rook(), WHITE, ROW_A, COL_1);
+        placePiece(new Knight(), WHITE, ROW_A, COL_2);
+        placePiece(new Bishop(), WHITE, ROW_A, COL_3);
+        placePiece(new Queen(), WHITE, ROW_A, COL_4);
+        placePiece(new King(), WHITE, ROW_A, COL_5);
+        placePiece(new Bishop(), WHITE, ROW_A, COL_6);
+        placePiece(new Knight(), WHITE, ROW_A, COL_7);
+        placePiece(new Rook(), WHITE, ROW_A, COL_8);
 
         for (int i = 0; i < BOARD_SIZE; i++) {
-            placePiece(new Pawn(WHITE), 1, i);
+            placePiece(new Pawn(), WHITE, ROW_B, i);
         }
 
-        placePiece(new Rook(BLACK), ROW_A, COL_1);
-        placePiece(new Knight(BLACK), ROW_B, COL_1);
-        placePiece(new Bishop(BLACK), ROW_C, COL_1);
-        placePiece(new Queen(BLACK), ROW_D, COL_1);
-        placePiece(new King(BLACK), ROW_E, COL_1);
-        placePiece(new Bishop(BLACK), ROW_F, COL_1);
-        placePiece(new Knight(BLACK), ROW_G, COL_1);
-        placePiece(new Rook(BLACK), ROW_H, COL_1);
+        placePiece(new Rook(), BLACK, ROW_H, COL_1);
+        placePiece(new Knight(), BLACK, ROW_H, COL_2);
+        placePiece(new Bishop(), BLACK, ROW_H, COL_3);
+        placePiece(new Queen(), BLACK, ROW_H, COL_4);
+        placePiece(new King(), BLACK, ROW_H, COL_5);
+        placePiece(new Bishop(), BLACK, ROW_H, COL_6);
+        placePiece(new Knight(), BLACK, ROW_H, COL_7);
+        placePiece(new Rook(), BLACK, ROW_H, COL_8);
 
         for (int i = 0; i < BOARD_SIZE; i++) {
-            placePiece(new Pawn(BLACK), 1, i);
+            placePiece(new Pawn(), BLACK, ROW_G, i);
         }
     }
 
-    private void placePiece(Piece piece, int row, int col) {
+    private void placePiece(Piece piece, String color, int row, int col) {
         board[row][col] = piece;
         piece.setPosition(row, col);
+        piece.setColor(color);
     }
-
-
 }

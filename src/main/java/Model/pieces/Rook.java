@@ -3,7 +3,7 @@ package Model.pieces;
 import Model.Piece;
 
 public class Rook extends Piece {
-    public Rook(String white) {
+    public Rook() {
         super();
     }
 
