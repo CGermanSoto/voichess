@@ -1,6 +1,6 @@
-package Constants;
+package Util;
 
-public class Color {
+public class ColorConstants {
     public static final String WHITE = "White";
     public static final String BLACK = "Black";
 }

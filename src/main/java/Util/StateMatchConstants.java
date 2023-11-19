@@ -1,6 +1,6 @@
-package Constants;
+package Util;
 
-public class StateMatch {
+public class StateMatchConstants {
     public static final String WHITE_WIN = "White wins";
     public static final String BLACK_WIN = "Black wins";
     public static final String CHECKMATE= "Check mate";

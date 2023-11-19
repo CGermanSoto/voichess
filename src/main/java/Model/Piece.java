@@ -1,6 +1,5 @@
 package Model;
 
-import Constants.Color;
 public abstract class Piece {
 
     private String color;

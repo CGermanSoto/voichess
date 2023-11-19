@@ -1,6 +1,6 @@
-package Constants;
+package Util;
 
-public class Position {
+public class PositionConstants {
     public static final int ROW_A = 0;
     public static final int ROW_B = 1;
     public static final int ROW_C = 2;

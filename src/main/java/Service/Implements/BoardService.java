@@ -1,19 +1,18 @@
-package Model;
+package Service.Implements;
 
-import Constants.Color;
+import Model.Piece;
 import Model.pieces.*;
+import Service.IBoardService;
 
-import java.util.Arrays;
+import static Util.BoardConstants.BOARD_SIZE;
+import static Util.ColorConstants.BLACK;
+import static Util.ColorConstants.WHITE;
+import static Util.PositionConstants.*;
 
-import static Constants.BoardConstants.BOARD_SIZE;
-import static Constants.Color.BLACK;
-import static Constants.Color.WHITE;
-import static Constants.Position.*;
-
-public class Board {
+public class BoardService implements IBoardService {
     private Piece[][] board;
 
-    public Board() {
+    public BoardService() {
         this.board = new Piece[BOARD_SIZE][BOARD_SIZE];
         initializeBoard();
     }
@@ -24,11 +23,11 @@ public class Board {
         this.board[endX][endY] = tipePiece;
         this.board[startX][startY] = null;
 
-
-//        if (!isValidMove(startX, startY, endX, endY)) {
-//            return false;
-//        }
         // Devuelve true si el movimiento fue exitoso, false si fue inválido.
+        if (!isValidMove(startX, startY, endX, endY)) {
+            return false;
+        }
+
         return true;
     }
 

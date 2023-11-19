@@ -1,33 +1,31 @@
-import Model.Board;
-import Controller.Game;
+import Controller.GameController;
+import Service.Implements.BoardService;
+import Service.Implements.GameService;
 
 import java.util.Scanner;
 
-import static Constants.Position.*;
-
 public class VoiceChessPlay {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         // Crear el tablero y la partida
-        Board board = new Board();
-        Game game = new Game(board);
-//        board.printBoard();
+//        BoardService boardService = new BoardService();
+//        GameService gameService = new GameService(boardService);
+//        gameService.play();
+        GameController gameController = new GameController();
+        gameController.play();
         // while para mantener activa la partida
         // Inicia el juego
-        //  .. Game.play
+        //  .. GameService.play
 
-        board.movePiece(ROW_B, COL_1 , ROW_C, COL_1);
-        board.printBoard();
+
         // Mueve el blanco
-        //  .. game.whiteMovement
+        //  .. gameService.whiteMovement
 
         // Mueve el negro
-        //  .. Game.blackMovement
+        //  .. GameService.blackMovement
 
 
         // Siguiente turno
-        // Game.BoardState
+        // GameService.BoardState
 
     }
 }
