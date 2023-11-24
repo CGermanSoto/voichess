@@ -23,7 +23,7 @@ public class ChessBoardGUI extends Application {
         // Establece el Scene en el Stage
         primaryStage.setScene(scene);
 
-        // Muestra el Stage
+        // Muestra el Stage.
         primaryStage.show();
     }
 
