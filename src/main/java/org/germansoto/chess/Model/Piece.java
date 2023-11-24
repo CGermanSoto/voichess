@@ -1,6 +1,13 @@
 package org.germansoto.chess.Model;
 
-public abstract class Piece {
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public abstract class Piece extends ImageView {
+
+    public Piece(String imagePath) {
+        super(new Image(imagePath));
+    }
 
     private String color;
 

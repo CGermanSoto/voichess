@@ -8,6 +8,10 @@ import org.germansoto.chess.Util.ColorConstants;
 import org.germansoto.chess.Util.PositionConstants;
 import org.springframework.stereotype.Service;
 
+import static org.germansoto.chess.Util.ColorConstants.WHITE;
+import static org.germansoto.chess.Util.PositionConstants.COL_5;
+import static org.germansoto.chess.Util.PositionConstants.ROW_A;
+
 @Service
 public class BoardService implements IBoardService {
     private Piece[][] board;
@@ -51,30 +55,30 @@ public class BoardService implements IBoardService {
 
 
     private void initializeBoard() {
-        placePiece(new Rook(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_1);
-        placePiece(new Knight(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_2);
-        placePiece(new Bishop(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_3);
-        placePiece(new Queen(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_4);
-        placePiece(new King(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_5);
-        placePiece(new Bishop(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_6);
-        placePiece(new Knight(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_7);
-        placePiece(new Rook(), ColorConstants.WHITE, PositionConstants.ROW_A, PositionConstants.COL_8);
+        placePiece(new Rook("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_1);
+        placePiece(new Knight("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_2);
+        placePiece(new Bishop("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_3);
+        placePiece(new Queen("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_4);
+        placePiece(new King("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, COL_5);
+        placePiece(new Bishop("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_6);
+        placePiece(new Knight("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_7);
+        placePiece(new Rook("/org/germansoto/chess/images/blackKing.png"), WHITE, ROW_A, PositionConstants.COL_8);
 
         for (int i = 0; i < BoardConstants.BOARD_SIZE; i++) {
-            placePiece(new Pawn(), ColorConstants.WHITE, PositionConstants.ROW_B, i);
+            placePiece(new Pawn("/org/germansoto/chess/images/blackKing.png"), WHITE, PositionConstants.ROW_B, i);
         }
 
-        placePiece(new Rook(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_1);
-        placePiece(new Knight(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_2);
-        placePiece(new Bishop(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_3);
-        placePiece(new Queen(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_4);
-        placePiece(new King(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_5);
-        placePiece(new Bishop(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_6);
-        placePiece(new Knight(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_7);
-        placePiece(new Rook(), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_8);
+        placePiece(new Rook("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_1);
+        placePiece(new Knight("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_2);
+        placePiece(new Bishop("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_3);
+        placePiece(new Queen("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_4);
+        placePiece(new King("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, COL_5);
+        placePiece(new Bishop("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_6);
+        placePiece(new Knight("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_7);
+        placePiece(new Rook("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_H, PositionConstants.COL_8);
 
         for (int i = 0; i < BoardConstants.BOARD_SIZE; i++) {
-            placePiece(new Pawn(), ColorConstants.BLACK, PositionConstants.ROW_G, i);
+            placePiece(new Pawn("/org/germansoto/chess/images/blackKing.png"), ColorConstants.BLACK, PositionConstants.ROW_G, i);
         }
     }
 

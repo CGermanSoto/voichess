@@ -3,8 +3,8 @@ package org.germansoto.chess.Model.pieces;
 import org.germansoto.chess.Model.Piece;
 
 public class Rook extends Piece {
-    public Rook() {
-        super();
+    public Rook(String imagePath) {
+        super(imagePath);
     }
 
     @Override

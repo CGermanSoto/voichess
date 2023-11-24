@@ -3,8 +3,8 @@ package org.germansoto.chess.Model.pieces;
 import org.germansoto.chess.Model.Piece;
 
 public class Bishop extends Piece {
-    public Bishop() {
-        super();
+    public Bishop(String imagePath) {
+        super(imagePath);
     }
 
     @Override

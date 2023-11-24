@@ -7,6 +7,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.control.TextArea;
 import org.w3c.dom.css.Rect;
 
+import static javafx.scene.paint.Color.BLACK;
+import static javafx.scene.paint.Color.WHITE;
+
 public class ChessBoardController {
 
     @FXML
@@ -28,7 +31,7 @@ public class ChessBoardController {
     private void initializeChessBoard() {
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int col = 0; col < BOARD_SIZE; col++) {
-                Color color = (row + col) % 2 == 0 ? Color.WHITE : Color.BLACK;
+                Color color = (row + col) % 2 == 0 ? WHITE : BLACK;
                 Rectangle squareChessBoard = createSquare(color);
                 chessBoard.add(squareChessBoard, col, row);
             }
