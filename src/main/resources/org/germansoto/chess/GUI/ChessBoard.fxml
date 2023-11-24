@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<HBox nodeOrientation="RIGHT_TO_LEFT" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.germansoto.chess.Controller.ChessBoardController">
+    <children>
+<!--        <GridPane fx:id="chessBoard" alignment="CENTER_RIGHT" hgap="0.0" prefHeight="500" prefWidth="500" vgap="0.0">-->
+<!--            &lt;!&ndash; Los cuadrados del tablero se agregarán dinámicamente desde el controlador &ndash;&gt;-->
+<!--        </GridPane>-->
+        <GridPane fx:id="chessBoard" alignment="CENTER" hgap="0.0" prefHeight="500" prefWidth="500" vgap="0.0">
+            <!-- Los cuadrados del tablero se agregarán dinámicamente desde el controlador -->
+        </GridPane>
+    </children>
+</HBox>
+
