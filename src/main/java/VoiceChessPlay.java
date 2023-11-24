@@ -1,32 +1,35 @@
-import Controller.GameController;
-import Service.Implements.BoardService;
-import Service.Implements.GameService;
+import javafx.application.Application;
+import org.germansoto.chess.Controller.GameController;
+import org.germansoto.chess.GUI.ChessBoardGUI;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-import java.util.Scanner;
-
+@Configuration
+@ComponentScan(basePackages = "org.germansoto.chess")
 public class VoiceChessPlay {
+    @Autowired
+    private GameController gameController;
+
     public static void main(String[] args) {
-        // Crear el tablero y la partida
-//        BoardService boardService = new BoardService();
-//        GameService gameService = new GameService(boardService);
-//        gameService.play();
-        GameController gameController = new GameController();
-        gameController.play();
-        // while para mantener activa la partida
-        // Inicia el juego
-        //  .. GameService.play
+        launchJavaFX(args);
 
+        ApplicationContext context = new AnnotationConfigApplicationContext(VoiceChessPlay.class);
+        VoiceChessPlay app = context.getBean(VoiceChessPlay.class);
+        app.play();
+    }
 
-        // Mueve el blanco
-        //  .. gameService.whiteMovement
+    public static void launchJavaFX(String[] args) {
+        new Thread(() -> Application.launch(ChessBoardGUI.class, args)).start();
+    }
 
-        // Mueve el negro
-        //  .. GameService.blackMovement
-
-
-        // Siguiente turno
-        // GameService.BoardState
-
+    public void play() {
+        // Llamar al método play del GameController
+//        gameController.play();
     }
 }
+
+
 
