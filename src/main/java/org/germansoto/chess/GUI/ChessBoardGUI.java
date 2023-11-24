@@ -11,19 +11,22 @@ public class ChessBoardGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/org/germansoto/chess/GUI/ChessBoard.fxml"));
+
+        // Establece el título del Stage
         primaryStage.setTitle("Voice Chess");
 
-        // Obtén el tamaño de la pantalla principal
+        // Configura el tamaño de la pantalla principal
         double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
         double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 
-        // Establece el tamaño del Scene para ocupar toda la pantalla
+        // Establece el Scene
         Scene scene = new Scene(root, screenWidth, screenHeight);
-
-        // Establece el Scene en el Stage
         primaryStage.setScene(scene);
 
-        // Muestra el Stage.
+        // Maximiza la ventana (sin entrar en el modo de pantalla completa)
+        primaryStage.setMaximized(true);
+
+        // Muestra el Stage
         primaryStage.show();
     }
 

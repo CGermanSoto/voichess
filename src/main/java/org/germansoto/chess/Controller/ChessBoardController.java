@@ -4,14 +4,20 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.control.TextArea;
+import org.w3c.dom.css.Rect;
 
 public class ChessBoardController {
 
     @FXML
     private GridPane chessBoard;
 
-//    @FXML
-//    private GridPane chessRight;
+    @FXML
+    private GridPane gridPaneConsole;
+
+    @FXML
+    private TextArea textAreaConsole;
+
     private static final int BOARD_SIZE = 8;
 
     @FXML
@@ -24,9 +30,7 @@ public class ChessBoardController {
             for (int col = 0; col < BOARD_SIZE; col++) {
                 Color color = (row + col) % 2 == 0 ? Color.WHITE : Color.BLACK;
                 Rectangle squareChessBoard = createSquare(color);
-//                Rectangle squareChessRight = createSquare(color);
                 chessBoard.add(squareChessBoard, col, row);
-//                chessRight.add(squareChessRight, col, row);
             }
         }
     }
@@ -38,7 +42,18 @@ public class ChessBoardController {
     }
 
     private void handleSquareClick(Rectangle square) {
-        // Lógica para manejar el clic en un cuadrado del tablero
-        System.out.println("Square clicked!");
+        // Obtener las coordenadas del cuadrado clicado
+        Integer ejeX = GridPane.getColumnIndex(square);
+        Integer ejeY = GridPane.getRowIndex(square);
+
+        // Obtener el texto actual del TextArea
+        String textoActual = textAreaConsole.getText();
+
+        // Concatenar las nuevas coordenadas al texto actual, con un salto de línea
+        String nuevoTexto = textoActual + "Click en (" + ejeX + ", " + ejeY + ")\n";
+
+        // Establecer el nuevo texto en el TextArea
+        textAreaConsole.setText(nuevoTexto);
     }
+
 }
